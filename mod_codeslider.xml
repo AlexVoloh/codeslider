@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension 	type="module"	version="2.5"	client="site"	method="upgrade">
+	<name>CodeSlider</name>
+	<author>CodeMatrix - Alex Voloh</author>
+	<creationDate>March 2013</creationDate>
+	<copyright>Copyright (C) 2012. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later;</license>
+	<authorEmail>alexey-voloh@yandex.ru</authorEmail>
+	<authorUrl>codematrix.ru</authorUrl>
+	<version>1.6.0</version>
+	<description><![CDATA[
+	<style>
+	.codesliderdesk {
+		text-align: center;
+		font-size: 16pt;
+		color: #AAA;
+		cursor: pointer;
+	}
+	
+	.codesliderdesk:hover {
+		color: #141516;
+	}
+	</style>
+	<a style='font-size: 18px' href='http://codematrix.ru/' target='_blank'>CodeSlider</a><br /><img src='../modules/mod_codeslider/tmpl/codeslider_img.png' style='width: 100%;' /><br /><p class='codesliderdesk'>Joomla 2.5 slideshow module</p>
+	<div style="width: 100%; text-align: center">
+	<a style="font-size: 12pt;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=S35QKS3E3CR22" target="_blank">DONATE</a><p>Your donation will be spent on flowers for this girl ;)</p></div>
+	]]></description>
+	<scriptfile>install.php</scriptfile>
+	
+	<files>
+		<filename module="mod_codeslider">mod_codeslider.php</filename>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>		
+		<filename>mod_codeslider.xml</filename>
+		<filename>license.txt</filename>
+	</files>
+
+	<languages>
+		<language tag="en-GB">language/en-GB.mod_codeslider.ini</language>
+		<language tag="en-GB">language/en-GB.mod_codeslider.sys.ini</language>
+		<language tag="ru-RU">language/ru-RU.mod_codeslider.ini</language>
+		<language tag="ru-RU">language/ru-RU.mod_codeslider.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="jqueryinclude" type="list" default="1" label="JQUERY_INCLUDE" description="JQUERY_INCLUDE_DESC">
+				<option value="0">PASSIVE</option>
+				<option value="1">ACTIVE</option>
+				</field>
+				
+				<!-- Полосы навигации -->
+				<field type="spacer" name="navseparator" label="NAVSEPARATOR" />
+				
+				<field name="slidernav" type="list" default="1" label="SLIDER_NAV" description="SLIDER_NAV_DESK">
+				<option value="0">PASSIVE</option>
+				<option value="1">ACTIVE</option>
+				</field>
+				
+				<field name="navopacity" type="text" default="0.3" label="CODESLIDER_NAV_OPACITY" description="CODESLIDER_NAV_OPACITY_DESC" size="14" />
+				
+				<field name="navopacityhover" type="text" default="0.8" label="CODESLIDER_NAV_OPACITY_HOVER" description="CODESLIDER_NAV_OPACITY_HOVER_DESC" size="14" />
+				
+				<field type="color" name="navcolor" default="#141516" label="NAV_COLOR" description="NAVCOLOR_DESC" />
+				
+				<!-- Подписи к картинкам -->
+				<field type="spacer" name="tooltipseparator" label="TOOLTIPSEPARATOR" />
+				
+				<field name="slidertooltip" type="list" default="1" label="SELECT_TOOLTIP" description="SELECT_TOOLTIP_DESK">
+				<option value="0">PASSIVE</option>
+				<option value="1">ACTIVE</option>
+				</field>
+				
+				<field name="slidertooltipalignment" type="list" default="center" label="SELECT_TOOLTIP_ALIGNMENT" description="SELECT_TOOLTIP_ALIGNMENT_DESK">
+				<option value="left">ALIGN_LEFT</option>
+				<option value="center">ALIGN_CENTER</option>
+				<option value="right">ALIGN_RIGHT</option>
+				</field>
+				
+				<field name="tooltipfontsize" type="text" default="110" label="TOOLTIP_FONT_SIZE" description="TOOLTIP_FONT_SIZE_DESC" size="14" />
+				
+				<field name="tooltipshowallways" type="list" default="0" label="TOOLTIP_SHOW_ALLWAYS" description="TOOLTIP_SHOW_ALLWAYS_DESC">
+				<option value="0">PASSIVE</option>
+				<option value="1">ACTIVE</option>
+				</field>
+				
+				<field type="color" name="imgdesccolor" default="#141516" label="IMGDESC_COLOR" description="IMGDESCCOLOR_DESC" />
+				
+				<field type="color" name="imgdescfontcolor" default="#ffffff" label="IMGDESCFONT_COLOR" description="IMGDESCFONTCOLOR_DESC" />
+				
+				<!-- Анимации -->
+				
+				<field type="spacer" name="delayseparator" label="DALAYSEPARATOR" />
+				
+				<field name="codedelay" type="text" default="450" label="CODESLIDER_DELAY" description="CODESLIDER_DELAY_DESK" size="14" />
+			
+				<field name="codeautoscroll" type="list" default="1" label="SELECT_CODEAUTOSCROLL" description="SELECT_CODEAUTOSCROLL_DESK">
+				<option value="0">PASSIVE</option>
+				<option value="1">ACTIVE</option>
+				</field>
+				
+				<field name="codecicle" type="list" default="0" label="SELECT_CICLE" description="SELECT_CICLE_DESC">
+				<option value="0">PASSIVE</option>
+				<option value="1">ACTIVE</option>
+				</field>
+				
+				<field name="codescrollspeed" type="text" default="3000" label="CODESCROLLSPEED" description="CODESCROLLSPEED_DESK" size="14" />
+				
+				<field type="spacer" name="otherseparator" label="OTHERSEPARATOR" />
+				
+				<field type="color" name="boxshadowcolor" default="#000" label="BOXSHADOW_COLOR" description="BOXSHADOWCOLOR_DESC" />
+				
+				<field name="codelinktarget" type="list" default="1" label="CODELINK_TARGET" description="CODELINK_TARGET_DESC">
+				<option value="0">PARENTWINDOW</option>
+				<option value="1">NEWWINDOW</option>
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="codeimagefirst">
+				<!-- IMAGE -->
+				<field type="spacer" name="myspacer1" label="IMAGESEPARATOR1" />
+				<field name="codeimage1" type="list" default="1" label="CODEIMAGESTAT" description="CODEIMAGESTAT_DESK">
+				<option value="0">PASSIVE</option>
+				<option value="1">ACTIVE</option>
+				</field>
+				<field name="codeimage1media" type="media"
+					path="images/codeslider" label="CODEIMAGEPATH" description="CODEIMAGEPATH_DESK" default="images/codeslider/slide1.jpg" />
+				<field name="codetitle1" type="textarea" default="CodeSlider - Joomla 2.5 simple slideshow module" label="CODESLIDER_TITLE" description="CODESLIDER_TITLE_DESK" filter="raw" />
+				<field name="codelink1" type="text" default="#" label="CODELINK" description="CODELINK_DESK" size="14" />
+				<!-- IMAGE -->
+				<field type="spacer" name="myspacer2" label="IMAGESEPARATOR2" />
+				<field name="codeimage2" type="list" default="1" label="CODEIMAGESTAT" description="CODEIMAGESTAT_DESK">
+				<option value="0">PASSIVE</option>
+				<option value="1">ACTIVE</option>
+				</field>
+				<field name="codeimage2media" type="media"
+					path="images/codeslider" label="CODEIMAGEPATH" description="CODEIMAGEPATH_DESK" default="images/codeslider/slide2.jpg" />
+				<field name="codetitle2" type="textarea" default="It is free, easy and convenient!" label="CODESLIDER_TITLE" description="CODESLIDER_TITLE_DESK" />
+				<field name="codelink2" type="text" default="#" label="CODELINK" description="CODELINK_DESK" size="14" />
+				
+				<!-- IMAGE -->
+				<field type="spacer" name="myspacer3" label="IMAGESEPARATOR3" />
+				<field name="codeimage3" type="list" default="1" label="CODEIMAGESTAT" description="CODEIMAGESTAT_DESK">
+				<option value="0">PASSIVE</option>
+				<option value="1">ACTIVE</option>
+				</field>
+				<field name="codeimage3media" type="media"
+					path="images/codeslider" label="CODEIMAGEPATH" description="CODEIMAGEPATH_DESK" default="images/codeslider/slide3.jpg" />
+				<field name="codetitle3" type="textarea" default="Fast customization for your website" label="CODESLIDER_TITLE" description="CODESLIDER_TITLE_DESK" />
+				<field name="codelink3" type="text" default="#" label="CODELINK" description="CODELINK_DESK" size="14" />
+				
+				<!-- IMAGE -->
+				<field type="spacer" name="myspacer4" label="IMAGESEPARATOR4" />
+				<field name="codeimage4" type="list" default="1" label="CODEIMAGESTAT" description="CODEIMAGESTAT_DESK">
+				<option value="0">PASSIVE</option>
+				<option value="1">ACTIVE</option>
+				</field>
+				<field name="codeimage4media" type="media"
+					path="images/codeslider" label="CODEIMAGEPATH" description="CODEIMAGEPATH_DESK" default="images/codeslider/slide4.jpg" />
+				<field name="codetitle4" type="textarea" default="You can add links to images" label="CODESLIDER_TITLE" description="CODESLIDER_TITLE_DESK" />
+				<field name="codelink4" type="text" default="#" label="CODELINK" description="CODELINK_DESK" size="14" />
+				
+				<!-- IMAGE -->
+				<field type="spacer" name="myspacer5" label="IMAGESEPARATOR5" />
+				<field name="codeimage5" type="list" default="1" label="CODEIMAGESTAT" description="CODEIMAGESTAT_DESK">
+				<option value="0">PASSIVE</option>
+				<option value="1">ACTIVE</option>
+				</field>
+				<field name="codeimage5media" type="media"
+					path="images/codeslider" label="CODEIMAGEPATH" description="CODEIMAGEPATH_DESK" default="images/codeslider/slide5.jpg" />
+				<field name="codetitle5" type="textarea" default="Change the color and transparency using the admin panel" label="CODESLIDER_TITLE" description="CODESLIDER_TITLE_DESK" />
+				<field name="codelink5" type="text" default="#" label="CODELINK" description="CODELINK_DESK" size="14" />
+				
+				<!-- IMAGE -->
+				<field type="spacer" name="myspacer6" label="IMAGESEPARATOR6" />
+				<field name="codeimage6" type="list" default="1" label="CODEIMAGESTAT" description="CODEIMAGESTAT_DESK">
+				<option value="0">PASSIVE</option>
+				<option value="1">ACTIVE</option>
+				</field>
+				<field name="codeimage6media" type="media"
+					path="images/codeslider" label="CODEIMAGEPATH" description="CODEIMAGEPATH_DESK" default="images/codeslider/slide6.jpg" />
+				<field name="codetitle6" type="textarea" default="Module is tested on more than 50 Joomla Templates" label="CODESLIDER_TITLE" description="CODESLIDER_TITLE_DESK" />
+				<field name="codelink6" type="text" default="#" label="CODELINK" description="CODELINK_DESK" size="14" />
+				
+				<!-- IMAGE -->
+				<field type="spacer" name="myspacer7" label="IMAGESEPARATOR7" />
+				<field name="codeimage7" type="list" default="1" label="CODEIMAGESTAT" description="CODEIMAGESTAT_DESK">
+				<option value="0">PASSIVE</option>
+				<option value="1">ACTIVE</option>
+				</field>
+				<field name="codeimage7media" type="media"
+					path="images/codeslider" label="CODEIMAGEPATH" description="CODEIMAGEPATH_DESK" default="images/codeslider/slide7.jpg" />
+				<field name="codetitle7" type="textarea" default="Choose or upload images using Media Manager" label="CODESLIDER_TITLE" description="CODESLIDER_TITLE_DESK" />
+				<field name="codelink7" type="text" default="#" label="CODELINK" description="CODELINK_DESK" size="14" />
+				
+				<!-- IMAGE -->
+				<field type="spacer" name="myspacer8" label="IMAGESEPARATOR8" />
+				<field name="codeimage8" type="list" default="0" label="CODEIMAGESTAT" description="CODEIMAGESTAT_DESK">
+				<option value="0">PASSIVE</option>
+				<option value="1">ACTIVE</option>
+				</field>
+				<field name="codeimage8media" type="media"
+					path="images/codeslider" label="CODEIMAGEPATH" description="CODEIMAGEPATH_DESK" default="#" />
+				<field name="codetitle8" type="textarea" default="Lorem ipsum sit dollor almet 4" label="CODESLIDER_TITLE" description="CODESLIDER_TITLE_DESK" />
+				<field name="codelink8" type="text" default="#" label="CODELINK" description="CODELINK_DESK" size="14" />
+				
+				<!-- IMAGE -->
+				<field type="spacer" name="myspacer9" label="IMAGESEPARATOR9" />
+				<field name="codeimage9" type="list" default="0" label="CODEIMAGESTAT" description="CODEIMAGESTAT_DESK">
+				<option value="0">PASSIVE</option>
+				<option value="1">ACTIVE</option>
+				</field>
+				<field name="codeimage9media" type="media"
+					path="images/codeslider" label="CODEIMAGEPATH" description="CODEIMAGEPATH_DESK" default="#" />
+				<field name="codetitle9" type="textarea" default="Lorem ipsum sit dollor almet 5" label="CODESLIDER_TITLE" description="CODESLIDER_TITLE_DESK" />
+				<field name="codelink9" type="text" default="#" label="CODELINK" description="CODELINK_DESK" size="14" />
+				
+				<!-- IMAGE -->
+				<field type="spacer" name="myspacer10" label="IMAGESEPARATOR10" />
+				<field name="codeimage10" type="list" default="0" label="CODEIMAGESTAT" description="CODEIMAGESTAT_DESK">
+				<option value="0">PASSIVE</option>
+				<option value="1">ACTIVE</option>
+				</field>
+				<field name="codeimage10media" type="media"
+					path="images/codeslider" label="CODEIMAGEPATH" description="CODEIMAGEPATH_DESK" default="#" />
+				<field name="codetitle10" type="textarea" default="Lorem ipsum sit dollor almet 6" label="CODESLIDER_TITLE" description="CODESLIDER_TITLE_DESK" />
+				<field name="codelink10" type="text" default="#" label="CODELINK" description="CODELINK_DESK" size="14" />
+				
+			</fieldset>
+				
+				
+				
+			<fieldset
+				name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="owncache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option	value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
