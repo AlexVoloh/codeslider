@@ -8,9 +8,9 @@ class mod_codesliderInstallerScript
 
         function install($parent) 
         {
-				jimport('joomla.filesystem.folder');
-				$dir = dirname(__FILE__);
-				JFolder::copy($dir.'/tmpl/images', JPATH_ROOT.'/images/codeslider');
+		jimport('joomla.filesystem.folder');
+		$dir = dirname(__FILE__);
+		JFolder::copy($dir.'/tmpl/images', JPATH_ROOT.'/images/codeslider');
         }
 
         function uninstall($parent) 
